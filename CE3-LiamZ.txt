@@ -1,0 +1,30 @@
+Algoritmo CalculoPi
+    Definir precision Como Real
+    Definir pi_aproximado Como Real
+    Funcion CalcularPi(precision) Como Real
+        Definir n Como Entero
+        Definir suma_arctan1, suma_arctan2 Como Real
+        Definir termino1, termino2 Como Real
+        n <- 0
+        suma_arctan1 <- 0
+        suma_arctan2 <- 0
+        termino1 <- 4 / 5
+        termino2 <- 1 / 239
+        Mientras Abs(termino1) > precision Hacer
+            suma_arctan1 <- suma_arctan1 + termino1
+            n <- n + 1
+            termino1 <- Potencia(-1, n) * (1/5)^(2 * n + 1) / (2 * n + 1)
+        FinMientras
+        n <- 0
+        Mientras Abs(termino2) > precision Hacer
+            suma_arctan2 <- suma_arctan2 + termino2
+            n <- n + 1
+            termino2 <- Potencia(-1, n) * (1/239)^(2 * n + 1) / (2 * n + 1)
+        FinMientras
+        pi_aprox <- 4 * (suma_arctan1 - suma_arctan2)
+        Devolver pi_aprox
+    FinFuncion
+    precision <- 10^(-3)
+    pi_aproximado <- CalcularPi(precision)
+    Escribir "Aproximacion de pi: ", pi_aproximado
+FinAlgoritmo

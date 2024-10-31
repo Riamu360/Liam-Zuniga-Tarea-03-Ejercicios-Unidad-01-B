@@ -1,0 +1,18 @@
+Algoritmo SumaInv
+    Definir n Como Entero
+    Definir x Como Real
+    Funcion SumaInversa(n, x) Como Real
+        Definir suma Como Real
+        suma <- 0
+        Para i <- n - 1 Hasta 0 Con Paso -1 Hacer
+            suma <- suma + x[i]
+        FinPara
+        Escribir "La suma es: ", suma
+    FinFuncion
+    Leer n
+    Dimension x[n]
+    Para i <- 0 Hasta n - 1 Hacer
+        Leer x[i]
+    FinPara
+    SumaInversa(n, x)
+FinAlgoritmo

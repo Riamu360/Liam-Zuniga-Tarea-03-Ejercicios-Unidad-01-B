@@ -1,0 +1,23 @@
+Algoritmo CalculoRaiz
+    Definir a, b, c Como Real
+    Funcion CalcularRaices(a, b, c) Como Real
+        Definir discriminante Como Real
+        Definir x1, x2 Como Real
+        discriminante <- b^2 - 4 * a * c
+        Si discriminante > 0 Entonces
+            x1 <- (-b + raiz(discriminante)) / (2 * a)
+            x2 <- (-b - raiz(discriminante)) / (2 * a)
+            Escribir "Raices reales diferentes: x1 = ", x1, ", x2 = ", x2
+        Sino
+            Si discriminante = 0 Entonces
+                x1 <- -b / (2 * a)
+                Escribir "Raiz real doble: x1 = x2 = ", x1
+            Sino
+                Escribir "Raices complejas."
+            FinSi
+        FinSi
+    FinFuncion
+    Escribir "Ingrese el valor de a, b, c"
+    Leer a, b, c
+    CalcularRaices(a, b, c)
+FinAlgoritmo

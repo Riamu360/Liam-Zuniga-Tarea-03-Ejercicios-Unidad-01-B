@@ -1,0 +1,25 @@
+Algoritmo SerieArctan
+    Definir x, precision1, precision2 Como Real
+    Definir n1, n2 Como Entero
+    Definir suma1, suma2 Como Real
+    Funcion ArctanSerie(x, precision) Como Real
+        Definir n Como Entero
+        Definir suma, termino Como Real
+        n <- 0
+        suma <- 0
+        termino <- x
+        Mientras Abs(termino) > precision Hacer
+            suma <- suma + termino
+            n <- n + 1
+            termino <- Potencia(-1, n) * (Potencia(x, 2*n + 1) / (2*n + 1))
+        FinMientras
+        Devolver n, suma
+    FinFuncion
+    x <- 1
+    precision1 <- 10^(-3)
+    precision2 <- 10^(-10)
+    (n1, suma1) <- ArctanSerie(x, precision1)
+    (n2, suma2) <- ArctanSerie(x, precision2)
+    Escribir "Numero de terminos para precision 10^-3: ", n1
+    Escribir "Numero de terminos para precision 10^-10: ", n2
+FinAlgoritmo
